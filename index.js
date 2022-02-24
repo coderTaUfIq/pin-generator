@@ -21,6 +21,11 @@ for(item of buttons){
             screenValue = '';
             submitScreen.value = screenValue;
         }
+        else if (buttonText == 'Del'){
+            let firstVal = submitScreen.value;
+            let numVal = parseInt(firstVal);
+            submitScreen.value = (numVal / 10 | 0);
+        }
         else{
             screenValue += buttonText;
             submitScreen.value = screenValue;
@@ -53,6 +58,8 @@ function pinVarify(){
         if(attmt == 1){
             document.getElementById('attmt-line').style.display = 'none';
             document.getElementById('notify-thief').style.display = 'block';
+            document.getElementById('submit-btn').style.display = 'none';
         }
     }
 }
+
